@@ -35,6 +35,7 @@ class BikesController < ApplicationController
 
   def bike_params
     params.require(:bike).permit(:model, :address, :gender, :color, :gear, :description, :price, :style, :photos)
+  end
 
   def find_bike
     @bike = Bike.find(params[:id])
