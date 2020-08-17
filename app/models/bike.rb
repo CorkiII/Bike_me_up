@@ -1,5 +1,6 @@
 class Bike < ApplicationRecord
   belongs_to :user
+  has_many_attached :photos
 
   validates :model, presence: true
   validates :address, presence: true
@@ -9,4 +10,3 @@ class Bike < ApplicationRecord
   validates :description, presence: true
   validates :price, presence: true
   validates :style, presence: true
-end
