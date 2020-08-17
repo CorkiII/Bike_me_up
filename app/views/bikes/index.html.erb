@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <% @bikes.each do |bike| %>
+        <%= link_to bike_path(bike) do %>
+          <div class="card-bike">
+            <%= cl_image_tag bike.photo.key, crop: :fill%>
+            <div class="card-bike-infos">
+              <div>
+                <h2> <%= bike.model %> </h2>
+                <p> <%= bike.description %> </p>
+              </div>
+              <h2 class="card-bike-pricing"> <%= bike.price %> </h2>
+            </div>
+          </div>
+        <% end %>
+      <% end %>
+    </div>
+  </div>
+</div>
