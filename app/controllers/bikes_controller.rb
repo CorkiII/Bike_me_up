@@ -1,5 +1,5 @@
 class BikesController < ApplicationController
-  before_action :find_bike, only: [:show, :destroy]
+  before_action :find_bike, only: [:show, :edit, :update, :destroy]
 
   def new
     @bike = Bike.new
@@ -7,7 +7,6 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
-    @bike.save
     if @bike.save
       redirect_to bike_path(@bike)
     else
@@ -23,8 +22,15 @@ class BikesController < ApplicationController
   end
 
   def destroy
-    @bike = Bike.find(params[:id])
     @bike.destroy
+  end
+
+  def edit
+  end
+
+  def update
+    @bike.update(bike_params)
+
     redirect_to bike_path(@bike)
   end
 
@@ -32,6 +38,7 @@ class BikesController < ApplicationController
 
   def bike_params
     params.require(:bike).permit(:model, :address, :gender, :color, :gear, :description, :price, :style, :photos)
+  end
 
   def find_bike
     @bike = Bike.find(params[:id])
