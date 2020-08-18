@@ -7,7 +7,7 @@
   <h2><%= @bike.model %></h2>
   <div class="infos d-flex justify-content-between">
     <div class="note">
-      <p><i class="far fa-star"></i> 4,5 - 8 locations - <%= @bike.address %></p>
+      <p><i class="far fa-star"></i> 4 - 8 locations - <%= @bike.address %></p>
     </div>
     <div class="share">
       <p><i class="fas fa-share-alt"></i> Partager - <i class="far fa-bookmark"></i> Enregistrer</p>
@@ -46,8 +46,23 @@
           <div class="booking">
             <%= @bike.price %>
             <p>Ajouter vos dates pour voir le total</p>
-            <%= link_to "Vérifier la disponibilité", new_bike_booking_path(@bike) %>
+            <div class="btn-bike">
+              <%= link_to "Vérifier la disponibilité", new_bike_booking_path(@bike) %>
+            </div>
           </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <h3>Evaluations</h3>
+      <p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 4 - 8 locations</p>
+      <div class="row">
+        <div class="reviews d-flex">
+          <div class="avatar">
+            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
+          </div>
+          <div class="review">Parfait ce vélo !</div>
+          <div class="date">17/08/2020</div>
         </div>
       </div>
     </div>
