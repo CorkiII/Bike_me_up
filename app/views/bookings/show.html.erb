@@ -1,0 +1,22 @@
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card-booking">
+        <%= cl_image_tag @bike.photo.key, height: 300, width: 400, crop: :fill %>
+        <div class="card-booking-infos">
+          <div>
+            <h2><%= booking.bike_id %></h2>
+            <p> <%= booking.start_date %> </p>
+            <p> <%= booking.end_date %> </p>
+            <p> <%= booking.created_at %> </p>
+            <p> <%= booking.created_at %> </p>
+          </div>
+          <h2 class="card-booking"> <%= booking.total_price %> </h2>
+        </div>
+      </div>
+      <%= link_to bookings_path, method::delete, data: { confirm: 'Etes-vous certain de vouloir supprimer votre réservation ?'} do %>
+      <i class="fas fa-minus"></i>
+      <% end %> %>
+    </div>
+  </div>
+</div>
