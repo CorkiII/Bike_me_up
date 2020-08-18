@@ -33,6 +33,8 @@ gem 'autoprefixer-rails'
 gem 'font-awesome-sass'
 gem 'simple_form'
 gem 'devise'
+gem 'pundit'
+
 gem 'faker'
 
 group :development, :test do
