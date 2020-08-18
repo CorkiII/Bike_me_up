@@ -1,18 +1,20 @@
 class BookingsController < ApplicationController
   def new
-    @reservation = Reservation.new
+    @bike = Bike.find(params[:bike_id])
+    @booking = Booking.new
   end
 
   def show
-    @reservation = Reservation.find(params[:id])
+    @booking = Booking.find(params[:id])
   end
 
   def create
-    @bike = Bike.find(bike_params)
-    @reservation = Reservation.new(reservation_params)
-    @reservation.bike = @reservation
-    if @bike.save
-      redirect_to bike_path(@bike)
+    @bike = Bike.find(params[:bike_id])
+    @booking = Booking.new(booking_params)
+    @booking.bike = @bike
+    @booking.user = current_user
+    if @booking.save
+      redirect_to booking_path(@booking)
     else
       render :new
     end
@@ -21,13 +23,13 @@ class BookingsController < ApplicationController
   def destroy
     @booking = Booking.find(params[:id])
     @booking.destroy
-    redirect_to bike_path(@bike)
+    redirect_to bike_path(@booking.bike)
   end
 
   private
 
-  def bike_params
-    params.require(:bike).permit(:model, :user_id, :address, :gender, :color, :gear, :description, :style, :price)
+  def booking_params
+    params.require(:booking).permit(:start_date, :end_date, :total_price)
   end
 
   def find_booking
