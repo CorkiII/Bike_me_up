@@ -1,19 +1,26 @@
-<h1>Ajouter un vélo</h1>
 <div class="container">
-  <div class="row">
-    <div class="col-4">
-      <%= simple_form_for @bike do |f| %>
-        <%= f.input :photos, as: :file, input_html: { multiple: true} %>
-        <%= f.input :model %>
-        <%= f.input :address %>
-        <%= f.input :gender %>
-        <%= f.input :color %>
-        <%= f.input :gear %>
-        <%= f.input :description %>
-        <%= f.input :price %>
-        <%= f.input :style %>
-        <%= f.submit "Valider", class: 'btn btn-primary' %>
-      <% end %>
+  <h1 class="title">Ajouter un vélo</h1>
+  <%= simple_form_for @bike do |f| %>
+    <div class="row justify-content-center">
+
+
+            <div class="col-6">
+              <%= f.input :model %>
+              <%= f.input :style, collection: Bike::BIKE_STYLE %>
+              <%= f.input :color, collection: Bike::BIKE_COLOR %>
+              <%= f.input :gender, collection: Bike::BIKE_GENDER %>
+              <%= f.input :gear %>
+            </div>
+
+            <div class="col-6">
+              <%= f.input :photos, as: :file, input_html: { multiple: true} %>
+              <%= f.input :description %>
+              <%= f.input :address, collection: Bike::BIKE_CITY %>
+              <%= f.input :price %>
+
+              <%= f.submit "Valider", class: 'btn btn-bike' %>
+            <% end %>
+
+          </div>
     </div>
-  </div>
 </div>
