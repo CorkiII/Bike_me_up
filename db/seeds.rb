@@ -14,7 +14,7 @@ User.create!(
   email: 'chloe@bikemeup.fr',
   password: '123456',
   first_name: "Chloe",
-  last_name: "Rihuay",
+  last_name: "Rihouay",
   username: "chloer"
 )
 
