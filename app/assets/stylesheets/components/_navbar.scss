@@ -7,7 +7,22 @@
   flex-grow: 0;
 }
 
-.navbar-lewagon .navbar-brand P {
+.navbar-lewagon .navbar-brand p {
   width: 40px;
-  color: green;
+  color: $bikemeup;
+}
+
+.nav-item button {
+  background-color: $bikemeup;
+  border-radius: 4px;
+  border: 2px solid $light-gray;
+  color: $light-gray;
+  padding: 6px 20px;
+}
+
+#bout a {
+  border: 2px solid $bikemeup;
+  border-radius: 4px;
+  color: $bikemeup;
+  padding: 6px 20px;
 }
