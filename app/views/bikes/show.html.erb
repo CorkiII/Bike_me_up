@@ -18,3 +18,15 @@
     </div>
   </div>
 </div>
+
+
+<ul class="list-group">
+  <% @bikes.each do |dose| %>
+    <li>
+      <%= bike.model %> <%=  bike.description %> <%= %><%= link_to bike_path(bike.id),
+      method: :delete,
+      data: { confirm: 'Etes-vous certain de vouloir supprimer votre annonce ?'} do %>
+          <i class="fas fa-minus"></i>
+        <% end %>
+    <% end %>
+</ul>
