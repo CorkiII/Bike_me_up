@@ -1,5 +1,3 @@
-authorize @bike
-
 class BookingsController < ApplicationController
   def new
     @bike = Bike.find(params[:bike_id])
