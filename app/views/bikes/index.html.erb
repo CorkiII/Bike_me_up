@@ -1,3 +1,8 @@
+<% if policy(Bike).show? %>
+  <%= link_to "New bike", bikes_path %>
+<% end %>
+
+
 <div class="container">
   <div class="row">
     <div class="col-12 d-flex justify-content-start flex-wrap">

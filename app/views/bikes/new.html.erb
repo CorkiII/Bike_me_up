@@ -1,3 +1,8 @@
+<% if policy(Restaurant).create? %>
+  <%= link_to "New bike", edit_bike_path %>
+<% end %>
+
+
 <h1>Ajouter un vélo</h1>
 <div class="container">
   <div class="row">

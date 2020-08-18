@@ -1,3 +1,5 @@
+authorize @bike
+
 class BikesController < ApplicationController
   before_action :find_bike, only: [:show, :edit, :update, :destroy]
 
