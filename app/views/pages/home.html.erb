@@ -1,2 +1,9 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523891046626-daa31d9e280f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);">
+  <div class="container">
+    <div class="d-flex flex-column align-items-center">
+      <h1>Bike me <strong>UP</strong>!</h1>
+      <p>Locations de vélos entre particuliers.</p>
+      <%= link_to "Visitez nous", bikes_path, class:"btn btn-success"  %>
+    </div>
+  </div>
+</div>
