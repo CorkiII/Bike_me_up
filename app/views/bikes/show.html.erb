@@ -41,7 +41,7 @@
           <div class="booking">
             <%= @bike.price %>
             <p>Ajouter vos dates pour voir le total</p>
-
+            <%= link_to "Vérifier la disponibilité", new_bike_booking_path(@bike) %>
           </div>
         </div>
       </div>
