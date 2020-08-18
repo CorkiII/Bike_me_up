@@ -7,7 +7,6 @@ class BikesController < ApplicationController
 
   def create
     @bike = Bike.new(bike_params)
-    @bike.save
     if @bike.save
       redirect_to bike_path(@bike)
     else
@@ -20,6 +19,10 @@ class BikesController < ApplicationController
   end
 
   def show
+  end
+
+  def destroy
+    @bike.destroy
   end
 
   def edit
