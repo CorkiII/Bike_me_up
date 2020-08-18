@@ -14,7 +14,7 @@ User.create!(
   email: 'chloe@bikemeup.fr',
   password: '123456',
   first_name: "Chloe",
-  last_name: "Rihouay",
+  last_name: "Rihuay",
   username: "chloer"
 )
 
@@ -43,7 +43,16 @@ end
 
 image_urls.sample(5).each do |url|
   file = URI.open(url)
-  bike = Bike.create!(model: model.sample, address: address.sample, gender: gender.sample, color: Faker::Color.color_name, gear: gear, description: description.sample, price: price, style: style.sample, user: User.last)
+  bike = Bike.create!(
+    model: model.sample,
+    address: address.sample,
+    gender: gender.sample,
+    color: Faker::Color.color_name,
+    gear: gear,
+    description: description.sample,
+    price: price,
+    style: style.sample,
+    user: User.last)
   bike.photos.attach(io: file, filename: 'bike.jpg', content_type: 'image/jpg')
 end
 
