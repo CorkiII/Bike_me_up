@@ -1,3 +1,18 @@
 .btn-bike {
   background-color: #099C68;
+  text-decoration: none;
+  padding: 16px;
+}
+
+.btn-flat {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #099C68;
+  transition: background 0.3s ease;
+}
+
+.btn-flat:hover {
+  background: #099C68;
+  color: white;
 }
