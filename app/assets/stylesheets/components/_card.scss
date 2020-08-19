@@ -91,3 +91,19 @@
   margin: 20px 0;
   border-radius: 5px;
 }
+
+.card-booking {
+  background-color: white;
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  h2 {
+    color: gray;
+  }
+  p {
+    color: gray;
+  }
+}
+
+.book_show a {
+  text-decoration: none;
+  color: gray;
+}
