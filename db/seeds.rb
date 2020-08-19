@@ -39,7 +39,7 @@ html_doc.search('img').each do |element|
   image_urls << element.attribute('data-image').value if element.attribute('data-image')
 end
 
-image_urls.sample(5).each do |url|
+image_urls.sample(20).each do |url|
   file = URI.open(url)
   bike = Bike.create!(
     model: model.sample,
