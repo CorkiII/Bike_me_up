@@ -1,4 +1,5 @@
 class BookingsController < ApplicationController
+  # skip_after_action :verify_authorized, only: [:index]
   def new
     @bike = Bike.find(params[:bike_id])
     @booking = Booking.new
@@ -27,7 +28,7 @@ class BookingsController < ApplicationController
   end
 
   def index
-    @bookings = Booking.find_by(user_id = current_user.id)
+    @bookings = policy_scope(Booking)
   end
 
   private

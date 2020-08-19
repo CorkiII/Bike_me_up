@@ -1,3 +1,6 @@
-<% @bookings.each do |booking| %>
-  <%= booking.total_price %>
-<% end %> %>
+<ul>
+  <% @bookings.each do |booking| %>
+    <li> <%= booking.total_price %></li>
+<% end %>
+
+</ul>
