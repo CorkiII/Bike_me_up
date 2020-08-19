@@ -57,5 +57,3 @@ end
 puts "Bikes created with photos!"
 
 
-
-
