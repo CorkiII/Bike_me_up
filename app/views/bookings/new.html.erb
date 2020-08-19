@@ -1,12 +1,18 @@
 <div class="container">
   <div class="row">
-    <div class="col-6">
-      <div class="card-booking">
-        <%= simple_form_for ([@bike, @booking]) do |f| %>
-        <%= f.input :start_date %>
-        <%= f.input :end_date %>
-        <%= f.submit "Book" , class: "btn btn-primary" %>
-        <% end %>
+    <div class="col-12">
+      <div class="d-flex justify-content-center">
+        <div class="formulaire mb-3" style="width: 500px">
+          <%= simple_form_for ([@bike, @booking]) do |f| %>
+            <div>
+              <%= f.input :start_date %>
+              <%= f.input :end_date %>
+            </div>
+            <div>
+              <%= f.submit "Book" , class:"btn btn-flat" %>
+            </div>
+          <% end %>
+        </div>
       </div>
     </div>
   </div>
