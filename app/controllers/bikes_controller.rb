@@ -1,5 +1,6 @@
 class BikesController < ApplicationController
   before_action :find_bike, only: [:show, :edit, :update, :destroy]
+  skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def new
     @bike = Bike.new
