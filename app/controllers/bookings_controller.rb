@@ -3,6 +3,7 @@ class BookingsController < ApplicationController
   def new
     @bike = Bike.find(params[:bike_id])
     @booking = Booking.new
+    authorize @booking
   end
 
   def show
