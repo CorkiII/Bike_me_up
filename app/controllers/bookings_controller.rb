@@ -26,6 +26,10 @@ class BookingsController < ApplicationController
     redirect_to bike_path(@booking.bike)
   end
 
+  def index
+    @bookings = Booking.find_by(user_id = current_user.id)
+  end
+
   private
 
   def booking_params
