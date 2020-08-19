@@ -1,56 +1,57 @@
-
 <div class="container">
-  <h2 class="my-3"><%= @bike.model %></h2>
-  <hr>
-  <div class="infos d-flex justify-content-between my-2">
-    <div class="note">
-      <p><i class="far fa-star"></i> 4 - 8 locations - <%= @bike.address %></p>
+  <div class="card-show-top">
+    <h2 class="my-3"><%= @bike.model %></h2>
+    <hr>
+    <div class="infos d-flex justify-content-between my-2">
+      <div class="note">
+        <p><i class="far fa-star"></i> 4 - 8 locations - <%= @bike.address %></p>
+      </div>
+      <div class="share d-flex px-2">
+        <i class="fas fa-trash-alt pr-1"></i><%= link_to "Supprimer mon annonce", bike_path(@bike), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer votre annonce?" }  %>
+        <p class="pl-3"><i class="fas fa-share-alt"></i> Partager - <i class="far fa-bookmark"></i> Enregistrer</p>
+      </div>
     </div>
-    <div class="share d-flex px-2">
-      <i class="fas fa-trash-alt pr-1"></i><%= link_to "Supprimer mon annonce", bike_path(@bike), method: :delete, data: { confirm: "Voulez-vous vraiment supprimer votre annonce?" }  %>
-      <p class="pl-3"><i class="fas fa-share-alt"></i> Partager - <i class="far fa-bookmark"></i> Enregistrer</p>
-    </div>
-  </div>
-  <div class="photos">
-    <div class="card-bike">
+    <div class="card-velo">
       <% @bike.photos.each do |photo| %>
         <%= cl_image_tag photo.key, crop: :fill %>
     <% end %>
-  </div>
-  <div class="bike-infos">
-    <div class="row">
-      <div class="col-md-8">
-        <div class="row">
-          <div class="col-md-4 d-flex flex-column px-2 py-3">
-            <div class="p-1"><i class="fas fa-restroom"></i> Type : <%= @bike.gender %></div>
-            <div class="p-1"><i class="fas fa-bicycle"></i> Style : <%= @bike.style %></div>
+    </div>
+    <div class="bike-infos">
+      <div class="row">
+        <div class="col-md-8">
+          <div class="row">
+            <div class="col-md-4 d-flex flex-column px-2 py-3">
+              <div class="p-1"><i class="fas fa-restroom"></i> Type : <%= @bike.gender %></div>
+              <div class="p-1"><i class="fas fa-bicycle"></i> Style : <%= @bike.style %></div>
+            </div>
+            <div class="col-md-4 d-flex flex-column px-2 py-3">
+              <div class="p-1"><i class="fas fa-palette"></i> Couleur : <%= @bike.color %></div>
+              <div class="p-1"><i class="fas fa-cog"></i> Vitesses : <%= @bike.gear %></div>
+            </div>
+            <div class="col-md-4 px-2 py-3 d-flex align-items-center">
+              <div class="p-1 d-flex align-items-center"><i class="fas fa-user-circle pr-2" id="loueur_icone"></i> Loueur : <%= @bike.user.first_name %> </div>
+            </div>
           </div>
-          <div class="col-md-4 d-flex flex-column px-2 py-3">
-            <div class="p-1"><i class="fas fa-palette"></i> Couleur : <%= @bike.color %></div>
-            <div class="p-1"><i class="fas fa-cog"></i> Vitesses : <%= @bike.gear %></div>
-          </div>
-          <div class="col-md-4 px-2 py-3 d-flex align-items-center">
-            <div class="p-1 d-flex align-items-center"><i class="fas fa-user-circle pr-2" id="loueur_icone"></i> Loueur : <%= @bike.user.first_name %> </div>
+          <div class="row">
+            <div class="description">
+              <%= @bike.description %>
+            </div>
           </div>
         </div>
-        <div class="row">
-          <div class="description">
-            <%= @bike.description %>
-          </div>
-        </div>
-      </div>
-      <div class="col-md-4">
-        <div class="row">
-          <div class="booking w-100">
-            <strong><%= @bike.price %>€</strong> par jour
-            <p>Ajouter vos dates</p>
-            <div class="btn-dispo">
-              <%= link_to "Réserver un vélo", new_bike_booking_path(@bike), class: "btn btn-flat" %>
+        <div class="col-md-4">
+          <div class="row">
+            <div class="booking w-100">
+              <strong><%= @bike.price %>€</strong> par jour
+              <p>Ajouter vos dates</p>
+              <div class="btn-dispo">
+                <%= link_to "Réserver un vélo", new_bike_booking_path(@bike), class: "btn btn-flat" %>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
+  </div>
     <div class="row">
       <div class="col-12 px-2 py-3">
         <h3>Evaluations</h3>

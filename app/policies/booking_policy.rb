@@ -12,6 +12,4 @@ class BookingPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
-
-
 end
