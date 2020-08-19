@@ -1,6 +1,14 @@
-<%= simple_form_for ([@bike, @booking]) do |f| %>
-  <%= f.input :start_date %>
-  <%= f.input :end_date %>
-  <%= f.input :total_price %>
-  <%= f.submit "Book" , class: "btn btn-primary" %>
-<% end %>
+<div class="container">
+  <div class="row">
+    <div class="col-6">
+      <div class="card-booking">
+        <%= simple_form_for ([@bike, @booking]) do |f| %>
+        <%= f.input :start_date %>
+        <%= f.input :end_date %>
+        <%= f.submit "Book" , class: "btn btn-primary" %>
+        <% end %>
+      </end>
+    </end>
+  </end>
+</end>
+
