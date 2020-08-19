@@ -6,7 +6,7 @@ class BookingsController < ApplicationController
     authorize @booking
   end
 
-  def showquit
+  def show
     @booking = Booking.find(params[:id])
     authorize @booking
   end
