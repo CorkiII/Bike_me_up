@@ -1,7 +1,6 @@
 class BookingPolicy < ApplicationPolicy
-
-  def create
-    true if user
+  def create?
+    true
   end
 
   class Scope < Scope
