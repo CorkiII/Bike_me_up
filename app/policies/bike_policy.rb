@@ -4,7 +4,7 @@ class BikePolicy < ApplicationPolicy
   end
 
   def index?
-
+    true
   end
 
   def show?

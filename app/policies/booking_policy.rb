@@ -4,7 +4,7 @@ class BookingPolicy < ApplicationPolicy
   end
 
   def show?
-    true if user && record.user == user
+    true
   end
 
   class Scope < Scope
@@ -12,6 +12,4 @@ class BookingPolicy < ApplicationPolicy
       scope.where(user: user)
     end
   end
-
-
 end
