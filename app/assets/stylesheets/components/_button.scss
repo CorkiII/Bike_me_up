@@ -1,5 +1,5 @@
 .btn-bike {
-  background-color: #099C68;
+  background-color: $bikemeup;
   text-decoration: none;
   padding: 16px;
 }
@@ -8,11 +8,15 @@
   color: white;
   padding: 8px 24px;
   border-radius: 4px;
-  background: #099C68;
+  background: $bikemeup;
+  border: 2px solid $bikemeup;
   transition: background 0.3s ease;
 }
 
 .btn-flat:hover {
-  background: #099C68;
-  color: white;
+  background: white;
+  color: $bikemeup;
+  padding: 8px 24px;
+  border: 2px solid $bikemeup;
+  border-radius: 4px;
 }
