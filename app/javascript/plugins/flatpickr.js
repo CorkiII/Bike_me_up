@@ -1,3 +1,10 @@
 import flatpickr from "flatpickr";
 
-flatpickr(".datepicker", {});
+const initFlatpickr = () => {
+  const dateElements = document.querySelectorAll('.datepicker');
+  if (dateElements.length > 0) {
+    flatpickr(dateElements, {});
+  }
+}
+
+export { initFlatpickr };
