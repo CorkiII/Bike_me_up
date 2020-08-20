@@ -4,17 +4,17 @@
   <%= simple_form_for @bike do |f| %>
     <div class="row justify-content-center mb-5">
       <div class="col-6">
-        <%= f.input :model %>
-        <%= f.input :style, collection: Bike::BIKE_STYLE %>
-        <%= f.input :color, collection: Bike::BIKE_COLOR %>
-        <%= f.input :description %>
+        <%= f.input :model,label: "Modèle" %>
+        <%= f.input :style, collection: Bike::BIKE_STYLE, label: "Type" %>
+        <%= f.input :color, collection: Bike::BIKE_COLOR, label: "Couleur" %>
+        <%= f.input :description, label: "Description" %>
       </div>
 
       <div class="col-6">
-        <%= f.input :gender, collection: Bike::BIKE_GENDER %>
-        <%= f.input :gear %>
-        <%= f.input :address, collection: Bike::BIKE_CITY %>
-        <%= f.input :price %>
+        <%= f.input :gender, collection: Bike::BIKE_GENDER, label: "Genre" %>
+        <%= f.input :gear, label: "Vitesses" %>
+        <%= f.input :address, collection: Bike::BIKE_CITY, label: "Adresse" %>
+        <%= f.input :price, label: "Prix" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true} %>
       </div>
       <div>
