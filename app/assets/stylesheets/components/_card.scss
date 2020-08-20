@@ -71,7 +71,6 @@
 
 
 .card-velo {
-  overflow: hidden;
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   border-radius: 5px;
@@ -107,6 +106,10 @@
   text-decoration: none;
   color: gray;
 }
+
+
+.share a {
+  text-decoration: none !important;
 
 .card-product {
   overflow: hidden;
