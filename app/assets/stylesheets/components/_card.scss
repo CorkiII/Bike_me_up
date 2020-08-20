@@ -143,4 +143,8 @@
 
 .card-product .card-product-infos {
   padding: 16px;
+  height: 180px;
+  display: flex;
+  align-content: space-around;
+  flex-direction: column;
 }
