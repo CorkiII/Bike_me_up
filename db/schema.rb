@@ -56,7 +56,6 @@ ActiveRecord::Schema.define(version: 2020_08_17_161124) do
     t.date "start_date"
     t.bigint "user_id", null: false
     t.date "end_date"
-    t.string "review"
     t.integer "total_price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
