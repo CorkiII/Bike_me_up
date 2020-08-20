@@ -4,9 +4,25 @@ class BikesController < ApplicationController
 
   def index
     if params[:query].present?
-      @bikes = policy_scope(Bike).global_search(params[:query])
+      @bikes = policy_scope(Bike).geocoded.search_by_address(params[:query])
+      @markers = @bikes.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
+          image_url: helpers.asset_url('bike')
+        }
+      end
     else
-      @bikes = policy_scope(Bike)
+      @bikes = policy_scope(Bike).geocoded
+      @markers = @bikes.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
+          image_url: helpers.asset_url('bike')
+        }
+      end
     end
   end
 
@@ -28,6 +44,7 @@ class BikesController < ApplicationController
 
   def show
     @bike = Bike.find(params[:id])
+    @booking = Booking.new
     authorize @bike
   end
 

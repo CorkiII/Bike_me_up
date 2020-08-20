@@ -7,13 +7,13 @@ class Booking < ApplicationRecord
   validates :end_date, presence: true
   validates :total_price, presence: true
 
-  include PgSearch::Model
-  pg_search_scope :global_search,
-    against: [ :start_date, :end_date ],
-    associated_against: {
-      bike: :address
-    },
-    using: {
-      tsearch: { prefix: true }
-    }
+  # include PgSearch::Model
+  # pg_search_scope :global_search,
+  #   against: [ :start_date, :end_date ],
+  #   associated_against: {
+  #     bike: :address
+  #   },
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
 end

@@ -36,6 +36,8 @@ gem 'simple_form'
 gem 'devise'
 gem 'pundit'
 
+gem 'geocoder'
+
 gem 'faker'
 
 group :development, :test do
