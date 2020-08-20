@@ -54,6 +54,9 @@
   position: relative;
 }
 
+.reviews-total {
+  color: gray;
+}
 .reviews {
   border: 2px solid #C0C0C0;
   background-color: white;
@@ -89,6 +92,7 @@
   padding: 20px;
   margin: 20px 0;
   border-radius: 5px;
+  color: gray;
 }
 
 .card-booking {
@@ -109,7 +113,8 @@
 
 
 .share a {
-  text-decoration: none !important;
+  text-decoration: none;
+  color: gray;
 }
 
 .card-product {
@@ -131,11 +136,12 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding-bottom: 5px;
 }
 
 .card-product p {
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 2.5;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
