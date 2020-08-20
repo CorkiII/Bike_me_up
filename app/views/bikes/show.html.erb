@@ -43,9 +43,17 @@
             <div class="booking w-100">
               <strong><%= @bike.price %>€</strong> par jour
               <p>Ajouter vos dates</p>
-              <div class="btn-dispo">
-                <%= link_to "Réserver un vélo", new_bike_booking_path(@bike), class: "btn btn-flat" %>
-              </div>
+              <%= simple_form_for([@bike, @booking]) do |f| %>
+                <div class="row">
+                  <div class="col">
+                    <%= f.input :start_date, placeholder: Time.zone.now.strftime("%b %d, %Y"), as: :string, input_html: {class: "datepicker", id: "range_start"}  %>
+                  </div>
+                  <div class="col">
+                    <%= f.input :end_date, placeholder: Time.zone.now.strftime("%b %d, %Y"), as: :string, input_html: {class: "datepicker", id: "range_end"}  %>
+                  </div>
+                </div>
+                  <%= f.submit "Réserver" , class:"btn btn-flat" %>
+              <% end %>
             </div>
           </div>
         </div>

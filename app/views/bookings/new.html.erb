@@ -2,15 +2,17 @@
   <div class="row">
     <div class="col-12">
       <div class="d-flex justify-content-center">
-        <div class="formulaire mb-3" style="width: 500px">
-          <%= simple_form_for ([@bike, @booking]) do |f| %>
-            <div>
-              <%= f.input :start_date, as: :string, input_html: {class: "datepicker"}  %>
-              <%= f.input :end_date, as: :string, input_html: {class: "datepicker"}  %>
+        <div class="formulaire mb-3 form-row" style="width: 500px">
+          <%= simple_form_for([@bike, @booking]) do |f| %>
+            <div class="row">
+              <div class="col">
+                <%= f.input :start_date, as: :string, input_html: {class: "datepicker", id: "range_start"}  %>
+              </div>
+              <div class="col">
+                <%= f.input :end_date, as: :string, input_html: {class: "datepicker", id: "range_end"}  %>
+              </div>
             </div>
-            <div>
               <%= f.submit "Réserver" , class:"btn btn-flat" %>
-            </div>
           <% end %>
         </div>
       </div>
