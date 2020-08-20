@@ -12,8 +12,10 @@ import { loadDynamicBannerText } from '../components/banner';
 
 document.addEventListener('turbolinks:load', () => {
   // Call your JS functions here
-  // [...]
-  loadDynamicBannerText();
+  if (document.querySelector('#banner-typed-text')) {
+    loadDynamicBannerText();
+  }
+
 });
 
 // Uncomment to copy all static images under ../images to the output folder and reference
@@ -39,3 +41,9 @@ document.addEventListener('turbolinks:load', () => {
   // Call your functions here, e.g:
   // initSelect2();
 });
+
+import { initMapbox } from '../plugins/init_mapbox';
+
+document.addEventListener('turbolinks:load', () => {
+  initMapbox();
+})
