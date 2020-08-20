@@ -1,43 +1,25 @@
-<div class="row">
-    <div class="col-12 px-2 py-3">
-      <h3>Evaluations</h3>
-      <div class="p-1"><p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 8 locations</p></div>
-      <div class="row">
-        <div class="reviews d-flex align-items-center w-100">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar-large", alt: "avatar-large" %>
-          <div class="avatar pr-3">
-          </div>
-          <div class="text-review d-flex justify-content-between w-100">
-            <div class="review pl-3 ">Génial, merci pour les conseils d'itinéraire!</div>
-            <div class="date d-flex justify-content-end">17/08/2020</div>
-          </div>
-        </div>
-        <div class="reviews d-flex align-items-center w-100">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
-          <div class="avatar pr-3">
-          </div>
-          <div class="text-review d-flex justify-content-between w-100">
-            <div class="review pl-3 ">Parfait ce vélo !</div>
-            <div class="date d-flex justify-content-end">1/4/2020</div>
-          </div>
-        </div>
-        <div class="reviews d-flex align-items-center w-100">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/ssaunier", class: "avatar-large", alt: "avatar-large" %>
-          <div class="avatar pr-3">
-          </div>
-          <div class="text-review d-flex justify-content-between w-100">
-            <div class="review pl-3 ">En bon état, nous a suivi pendant tout notre tour du golf ! Je recommande</div>
-            <div class="date d-flex justify-content-end">15/03/2020</div>
-          </div>
-        </div>
-        <div class="reviews d-flex align-items-center w-100">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar-large", alt: "avatar-large" %>
-          <div class="avatar pr-3">
-          </div>
-          <div class="text-review d-flex justify-content-between w-100">
-            <div class="review pl-3 ">Loueur très sympathique et vélo en parfait état. Pour des vacances avec style.</div>
-            <div class="date d-flex justify-content-end">9/02/2020</div>
-          </div>
+<div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523891046626-daa31d9e280f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
+  background-size: cover">
+  <div class="container">
+    <div class="row">
+      <div>
+        <div class="cards">
+          <% @bikes.each do |bike| %>
+            <%= link_to bike_path(bike) do %>
+              <div class="card-bike">
+                <% bike.photos.each do |photo| %>
+                <%= cl_image_tag photo.key, crop: :fill %>
+                <% end %>
+                <div class="card-bike-infos">
+                  <div>
+                    <h2><%= bike.model %></h2>
+                    <p> <%= bike.address %> </p>
+                  </div>
+                  <h2 id="card-bike-price"><%= bike.price %>€</h2>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
         </div>
       </div>
     </div>
