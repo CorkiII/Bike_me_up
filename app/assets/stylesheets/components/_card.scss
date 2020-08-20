@@ -12,10 +12,9 @@
 
 .card-bike {
   width: 278px;
-  height: 320px;
+  height: 330px;
   background: white;
   overflow: hidden;
-  margin-bottom: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -31,7 +30,6 @@
   color: $bikemeup;
   margin: 0;
   margin-bottom: 5px;
-  text-decoration: underline;
 }
 
 .card-bike-infos p {
@@ -48,13 +46,16 @@
 }
 
 .card-bike .card-bike-infos {
-  padding: 16px;
+  padding: 13px;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
+  height: 85px;
   position: relative;
 }
 
+.reviews-total {
+  color: gray;
+}
 .reviews {
   border: 2px solid #C0C0C0;
   background-color: white;
@@ -78,9 +79,10 @@
 }
 
 .card-velo > img {
-  height: 200px;
+  height: 420px;
   width: 100%;
   object-fit: cover;
+  object-position: 0px -166px;
 }
 
 .card-show-top {
@@ -90,6 +92,7 @@
   padding: 20px;
   margin: 20px 0;
   border-radius: 5px;
+  color: gray;
 }
 
 .card-booking {
@@ -110,7 +113,8 @@
 
 
 .share a {
-  text-decoration: none !important;
+  text-decoration: none;
+  color: gray;
 }
 
 .card-product {
@@ -132,11 +136,12 @@
   font-size: 16px;
   font-weight: bold;
   margin: 0;
+  padding-bottom: 5px;
 }
 
 .card-product p {
   font-size: 12px;
-  line-height: 1.4;
+  line-height: 2.5;
   opacity: .7;
   margin-bottom: 0;
   margin-top: 8px;
