@@ -15,10 +15,10 @@ class Bike < ApplicationRecord
   validates :price, presence: true
   validates :style, presence: true
 
-  include PgSearch::Model
-    pg_search_scope :search_by_address_and_gender,
-      against: [ :address, :gender ],
-      using: {
-        tsearch: { prefix: true } # <-- now `superman batm` will return something!
-      }
+  # include PgSearch::Model
+  # pg_search_scope :search_by_address_and_gender,
+  #   against: :address,
+  #   using: {
+  #     tsearch: { prefix: true }
+  #   }
 end

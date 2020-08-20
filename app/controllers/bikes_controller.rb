@@ -2,6 +2,14 @@ class BikesController < ApplicationController
   before_action :find_bike, only: [:show, :edit, :update, :destroy]
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
+  def index
+    if params[:query].present?
+      @bikes = policy_scope(Bike).global_search(params[:query])
+    else
+      @bikes = policy_scope(Bike)
+    end
+  end
+
   def new
     @bike = Bike.new
     authorize @bike
@@ -16,10 +24,6 @@ class BikesController < ApplicationController
     else
       render :new
     end
-  end
-
-  def index
-    @bikes = policy_scope(Bike)
   end
 
   def show
