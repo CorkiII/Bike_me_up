@@ -11,10 +11,9 @@
 
 .card-bike {
   width: 278px;
-  height: 335px;
+  height: 330px;
   background: white;
   overflow: hidden;
-  margin-bottom: 10px;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
@@ -30,7 +29,6 @@
   color: $bikemeup;
   margin: 0;
   margin-bottom: 5px;
-  text-decoration: underline;
 }
 
 .card-bike-infos p {
@@ -47,11 +45,11 @@
 }
 
 .card-bike .card-bike-infos {
-  padding: 16px;
+  padding: 13px;
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  position: relative;
+  height: 85px;
 }
 
 .reviews {
