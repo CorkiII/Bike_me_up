@@ -16,6 +16,7 @@
   background: white;
   overflow: hidden;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  border-radius: 4px;
 }
 
 .card-bike > img {
@@ -57,10 +58,10 @@
   color: gray;
 }
 .reviews {
-  border: 2px solid #C0C0C0;
+  border: 1px solid #C0C0C0;
   background-color: white;
   padding: 20px;
-  border-radius: 5px;
+  border-radius: 4px;
   margin: 10px;
 }
 
@@ -75,7 +76,7 @@
 .card-velo {
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  border-radius: 5px;
+  border-radius: 4px;
 }
 
 .card-velo > img {
@@ -83,6 +84,7 @@
   width: 100%;
   object-fit: cover;
   object-position: 0px -166px;
+  border-radius: 4px;
 }
 
 .card-show-top {
@@ -90,15 +92,16 @@
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   padding: 20px;
-  margin: 20px 0;
+  margin: 10px 0;
   border-radius: 5px;
   color: gray;
 }
 
 .card-booking {
+  border-radius: 4px;
   background-color: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
-  h2 {
+  h3 {
     color: gray;
   }
   p {
@@ -161,4 +164,5 @@
   width: 33%;
   position: sticky;
   top: 10px;
+  border-radius: 4px;
 }
