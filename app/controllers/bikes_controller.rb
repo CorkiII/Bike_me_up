@@ -14,7 +14,7 @@ class BikesController < ApplicationController
         }
       end
     else
-      @bikes = policy_scope(Bike)
+      @bikes = policy_scope(Bike).geocoded
       @markers = @bikes.map do |bike|
         {
           lat: bike.latitude,
