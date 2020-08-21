@@ -7,19 +7,22 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.new(review_params[:id])
+    @review = Review.new(review_params)
+    @booking = Booking.find(params[:booking_id])
+    @review.bike = @booking.bike
     @review.user = current_user
     authorize @review
+
     if @review.save
-      redirect_to bike_path(@bike)
+      redirect_to bike_path(@booking.bike)
     else
-      render :show
+      render :new
     end
   end
 
   private
 
   def review_params
-    params.require(:review).permit(:content, :bike_id)
+    params.require(:review).permit(:content)
   end
 end
