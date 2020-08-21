@@ -3,14 +3,26 @@ class BikesController < ApplicationController
   skip_before_action :authenticate_user!, only: [:home, :index, :show]
 
   def index
-    @bikes = policy_scope(Bike).geocoded # returns flats with coordinates
-    @markers = @bikes.map do |bike|
-      {
-        lat: bike.latitude,
-        lng: bike.longitude,
-        infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
-        image_url: helpers.asset_url('bike')
-      }
+    if params[:query].present?
+      @bikes = policy_scope(Bike).geocoded.search_by_address(params[:query]).order(updated_at: :desc)
+      @markers = @bikes.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
+          image_url: helpers.asset_url("bike")
+        }
+      end
+    else
+      @bikes = policy_scope(Bike).geocoded.order(updated_at: :desc)
+      @markers = @bikes.map do |bike|
+        {
+          lat: bike.latitude,
+          lng: bike.longitude,
+          infoWindow: render_to_string(partial: "info_window", locals: { bike: bike }),
+          image_url: helpers.asset_url("bike")
+        }
+      end
     end
   end
 

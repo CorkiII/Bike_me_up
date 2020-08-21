@@ -13,7 +13,7 @@
       <div class="col-6">
         <%= f.input :gender, collection: Bike::BIKE_GENDER, label: "Genre" %>
         <%= f.input :gear, label: "Vitesses" %>
-        <%= f.input :address, collection: Bike::BIKE_CITY, label: "Adresse" %>
+        <%= f.input :address, label: "Adresse", class: 'bike_new_id' %>
         <%= f.input :price, label: "Prix" %>
         <%= f.input :photos, as: :file, input_html: { multiple: true} %>
       </div>
