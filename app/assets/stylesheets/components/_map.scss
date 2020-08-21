@@ -7,7 +7,17 @@
   font-family: 'Open Sans', sans-serif;
 }
 
-#map {
-  height: 100vh;
+.popup h2 {
+  font-size: 16px;
+  font-weight: bold;
+  color: $bikemeup;
+  margin: 0;
+  margin-bottom: 5px;
+}
 
+.popup p {
+  font-size: 12px;
+  opacity: .7;
+  margin: 0;
+  color: $gray;
 }
