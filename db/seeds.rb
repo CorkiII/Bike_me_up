@@ -5,7 +5,7 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
-
+Review.destroy_all
 Booking.destroy_all
 Bike.destroy_all
 User.destroy_all
@@ -23,7 +23,7 @@ gender = ['homme', 'femme']
 style = ['VTC', 'VTT', 'Vélo de ville']
 description = ['Vélo de ville. Idéal pour les déplacements en ville pour la balade, les courses ou le travail.', 'Vélo à assistance électrique (VAE) pour tous vos déplacements afin d’arriver à destination sans fatigue et sans transpirer.', 'Vélo de randonnée. Idéal pour les balades et les randonnées sur tous types de revêtements et dans toutes les conditions.', 'Vélo de course. Idéal pour les balades sportives et les courses cyclistes.']
 model = ['Vélo B-Twin électrique', 'Vélo piste Motobécane', 'Canyon spectral', 'Fixie Lejeune', 'Vélo de ville femme', 'VTT homme Btwin', 'VTT femme Go Sport', 'Vélo de ville femme Gitane', 'Vélo hollandais Peugeot', 'Randonneuse Helium', 'Vélo de ville Raymond Poulidor', 'Vélo Hangler']
-
+review = [ "Parfait ce vélo !", "En bon état, nous a suivi pendant tout notre tour du golf ! Je recommande", "Loueur très sympathique et vélo en parfait état. Pour des vacances avec style."]
 
 require 'open-uri'
 require 'nokogiri'
@@ -52,6 +52,10 @@ image_urls.sample(20).each do |url|
     style: style.sample,
     user: User.last)
   bike.photos.attach(io: file, filename: 'bike.jpg', content_type: 'image/jpg')
+end
+
+40.times do
+  Review.create(bike: Bike.all.sample, content: review.sample, user: User.last)
 end
 
 puts "Bikes created with photos!"
