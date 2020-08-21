@@ -4,7 +4,7 @@ class BikesController < ApplicationController
 
   def index
     if params[:query].present?
-      @bikes = policy_scope(Bike).geocoded.search_by_address(params[:query])
+      @bikes = policy_scope(Bike).geocoded.search_by_address(params[:query]).order(updated_at: :desc)
       @markers = @bikes.map do |bike|
         {
           lat: bike.latitude,
@@ -14,7 +14,7 @@ class BikesController < ApplicationController
         }
       end
     else
-      @bikes = policy_scope(Bike).geocoded
+      @bikes = policy_scope(Bike).geocoded.order(updated_at: :desc)
       @markers = @bikes.map do |bike|
         {
           lat: bike.latitude,
