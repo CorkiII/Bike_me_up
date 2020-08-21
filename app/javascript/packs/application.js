@@ -26,6 +26,7 @@ require("channels")
 import "bootstrap";
 import { loadDynamicBannerText } from '../components/banner';
 import { initFlatpickr } from '../plugins/flatpickr';
+import { initMapbox } from '../plugins/init_mapbox';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -33,4 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   // [...]
   initFlatpickr();
   loadDynamicBannerText();
+  initMapbox();
 });
