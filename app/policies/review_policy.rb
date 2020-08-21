@@ -1,10 +1,6 @@
 class ReviewPolicy < ApplicationPolicy
-  def new?
-    true if user
-  end
-
   def create?
-    true if user
+    user.bookings.where(bike_id: record.bike_id).first.present?
   end
 
   class Scope < Scope
