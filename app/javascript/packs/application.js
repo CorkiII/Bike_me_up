@@ -34,5 +34,5 @@ document.addEventListener('turbolinks:load', () => {
   // [...]
   initFlatpickr();
   loadDynamicBannerText();
-  initMapbox()
+  initMapbox();
 });
