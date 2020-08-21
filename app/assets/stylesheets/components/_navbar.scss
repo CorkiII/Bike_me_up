@@ -1,6 +1,9 @@
 .navbar-lewagon {
   justify-content: space-between;
   background: white;
+  width: 100%;
+  position: fixed;
+  z-index: 10;
 }
 
 .navbar-lewagon .navbar-collapse {
@@ -25,4 +28,9 @@
   border-radius: 4px;
   color: $bikemeup;
   padding: 6px 20px;
+}
+
+.decal {
+  padding-top: 12.2vh;
+
 }
