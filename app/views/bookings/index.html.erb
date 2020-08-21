@@ -11,9 +11,10 @@
               <p><strong>Date de début</strong>: <%= booking.start_date.strftime("%A, %b %d") %></p>
               <p><strong>Date de fin</strong>: <%= booking.end_date.strftime("%A, %b %d") %></p>
               <p><strong>Tarif</strong>: <%= booking.total_price %>€</p>
+              <%= link_to "Donner votre avis", new_booking_review_path(booking), class: "btn btn-flat" %>
+              <% end %>
             </div>
           </div>
-        <% end %>
       </div>
     </div>
   </div>

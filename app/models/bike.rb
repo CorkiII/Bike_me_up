@@ -5,6 +5,7 @@ class Bike < ApplicationRecord
   BIKE_CITY = ['Nantes', 'Rennes', 'Lorient', 'Vannes', 'Arradon', 'Arzon', 'Sarzeau', 'Baden', 'Bono', 'Carnac', 'La Trinité sur mer']
   belongs_to :user
   has_many_attached :photos
+  has_many :reviews
 
   validates :model, presence: true
   validates :address, presence: true

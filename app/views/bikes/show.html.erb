@@ -66,25 +66,40 @@
     </div>
   </div>
 
-  <div class="row">
+  <div class="container">
+    <div class="row justify-content-center">
+
+    <div class="reviews-total col-12 px-2 py-3">
+      <h3>Evaluations</h3>
+<!--       <div class="p-1"><p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 8 locations</p></div>
+ -->      <div class="col-12">
+        <% @bike.reviews.each do |review| %>
+          <div class="review-card">
+            <div class="reviewss d-flex align-items-center w-100">
+<!--               <div class="avatar pr-3">
+                <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar-large", alt: "avatar-large" %>
+              </div> -->
+              <div class="text-review d-flex justify-content-between w-100">
+                <div class="review pl-5 "><%= review.content %></div>
+                <div class="date d-flex justify-content-end"><%= review.created_at.strftime("%b %d, %Y") %></div>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+<!--   <div class="row">
     <div class="reviews-total col-12 px-2 py-3">
       <h3>Evaluations</h3>
       <div class="p-1"><p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 8 locations</p></div>
       <div class="row">
-        <div class="reviews d-flex align-items-center w-100">
-            <%= image_tag "https://kitt.lewagon.com/placeholder/users/random", class: "avatar-large", alt: "avatar-large" %>
-          <div class="avatar pr-3">
-          </div>
-          <div class="text-review d-flex justify-content-between w-100">
-            <div class="review pl-3 ">Génial, merci pour les conseils d'itinéraire!</div>
-            <div class="date d-flex justify-content-end">17/08/2020</div>
-          </div>
-        </div>
+
         <div class="reviews d-flex align-items-center w-100">
           <%#= image_tag "https://kitt.lewagon.com/placeholder/users/arthur-littm", class: "avatar-large", alt: "avatar-large" %>
           <div class="avatar pr-3">
-          </div>
-          <div class="text-review d-flex justify-content-between w-100">
+          </div> -->
+   <!--        <div class="text-review d-flex justify-content-between w-100">
             <div class="review pl-3 ">Parfait ce vélo !</div>
             <div class="date d-flex justify-content-end">1/4/2020</div>
           </div>
@@ -111,3 +126,4 @@
     </div>
   </div>
 </div>
+ -->
