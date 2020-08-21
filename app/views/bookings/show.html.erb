@@ -3,16 +3,16 @@
     <div class="col-12">
       <div class="d-flex justify-content-center">
         <div class="card-booking p-3 mt-3 mb-3">
-          <h2>Ma réservation</h2>
+          <h3>Ma réservation</h3>
           <% @booking.bike.photos.each do |photo| %>
             <%= cl_image_tag photo.key, height: 300, width: 400, crop: :fill %>
           <% end %>
-          <div class="card-booking-infos">
+          <div class="card-booking-infos mt-2">
             <div class="d-flex flex-column align-content-between">
               <p><strong>Date de début</strong>: <%= @booking.start_date.strftime("%A, %b %d") %></p>
               <p><strong>Date de fin</strong>: <%= @booking.end_date.strftime("%A, %b %d") %></p>
             </div>
-            <h2 class=""><strong>Prix total</strong>: <%= @booking.total_price %>€</h2>
+            <h3 class="">Prix total: <strong><%= @booking.total_price %>€</strong></h3>
           </div>
         </div>
       </div>
