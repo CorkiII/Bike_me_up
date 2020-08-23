@@ -1,8 +1,8 @@
 <div style="background-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)), url(https://images.unsplash.com/photo-1523891046626-daa31d9e280f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80);
   background-size: cover">
-  <div class="container">
+  <div class="container", style="height: 88vh">
     <div class="row justify-content-center">
-      <div class="col-6">
+      <div class="col-8">
         <% @bookings.each do |booking| %>
           <div class="card-product mb-3 mt-3">
             <%= cl_image_tag booking.bike.photos.first.key %>
@@ -11,12 +11,12 @@
               <p><strong>Date de début</strong>: <%= booking.start_date.strftime("%A, %b %d") %></p>
               <p><strong>Date de fin</strong>: <%= booking.end_date.strftime("%A, %b %d") %></p>
               <p><strong>Tarif</strong>: <%= booking.total_price %>€</p>
-              <%= link_to "Donner votre avis", new_booking_review_path(booking), class: "btn btn-flat" %>
-              <% end %>
+              <p><strong>Propriétaire</strong>: <%= booking.bike.user.first_name %></p>
+              <%= link_to "Donner votre avis", new_booking_review_path(booking), class: "btn btn-flat mt-3" %>
             </div>
           </div>
+        <% end %>
       </div>
     </div>
   </div>
 </div>
-
