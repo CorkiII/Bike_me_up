@@ -1,78 +1,79 @@
 <div class="container">
-  <div class="card-show-top">
-    <h2 class="my-3"><%= @bike.model %></h2>
-    <hr>
-    <div class="infos d-flex justify-content-between my-3">
-      <div class="note">
-        <p class="mb-0"><i class="far fa-star"></i> 4 - 8 locations - <%= @bike.address %></p>
-      </div>
-      <div class="share d-flex justify-content-between align-items-center">
-        <%= link_to(bike_path(@bike),
-          method: :delete,
-          data: { confirm: "Voulez-vous vraiment supprimer votre annonce?"}) do %>
-          <i class="fas fa-trash-alt pr-3"></i>
-        <% end %>
-        <i class="fas fa-share-alt pr-3"></i>
-        <i class="far fa-bookmark pr-3"></i>
-      </div>
-    </div>
-    <div class="card-velo">
-      <% @bike.photos.each do |photo| %>
-        <%= cl_image_tag photo.key, crop: :fill %>
-    <% end %>
-    </div>
-    <div class="bike-infos">
-      <div class="row">
-        <div class="col-md-8">
-          <div class="row">
-            <div class="col-md-4 d-flex flex-column px-2 py-3">
-              <div class="p-1"><i class="fas fa-restroom"></i> Type : <%= @bike.gender %></div>
-              <div class="p-1"><i class="fas fa-bicycle"></i> Style : <%= @bike.style %></div>
-            </div>
-            <div class="col-md-4 d-flex flex-column px-2 py-3">
-              <div class="p-1"><i class="fas fa-palette"></i> Couleur : <%= @bike.color %></div>
-              <div class="p-1"><i class="fas fa-cog"></i> Vitesses : <%= @bike.gear %></div>
-            </div>
-            <div class="col-md-4 px-2 py-3 d-flex align-items-center">
-              <div class="p-1 d-flex align-items-center"><i class="fas fa-user-circle pr-2" id="loueur_icone"></i> Loueur : <%= @bike.user.first_name %> </div>
-            </div>
+  <div class="row d-flex justify-content-center">
+    <div class="col-10">
+      <div class="card-show-top">
+        <h2 class="my-3"><%= @bike.model %></h2>
+        <hr>
+        <div class="infos d-flex justify-content-between my-3">
+          <div class="note">
+            <p class="mb-0"><i class="far fa-star"></i> 4 - 8 locations - <%= @bike.address %></p>
           </div>
-          <div class="row">
-            <div class="description px-3">
-              <%= @bike.description %>
-            </div>
+          <div class="share d-flex justify-content-between align-items-center">
+            <%= link_to(bike_path(@bike),
+              method: :delete,
+              data: { confirm: "Voulez-vous vraiment supprimer votre annonce?"}) do %>
+              <i class="fas fa-trash-alt pr-3"></i>
+            <% end %>
+            <i class="fas fa-share-alt pr-3"></i>
+            <i class="far fa-bookmark pr-3"></i>
           </div>
         </div>
-        <div class="col-md-4">
-          <div class="row">
-            <div class="booking w-100">
-              <strong><%= @bike.price %>€</strong> par jour
-              <p>Ajouter vos dates</p>
-              <%= simple_form_for([@bike, @booking]) do |f| %>
-                <div class="row">
-                  <div class="col">
-                    <%= f.input :start_date, label: "Arrivée", placeholder: Time.zone.now.strftime("%b %d, %Y"), as: :string, input_html: {class: "datepicker", id: "range_start"}  %>
-                  </div>
-                  <div class="col">
-                    <%= f.input :end_date, label: "Départ", placeholder: Time.zone.now.strftime("%b %d, %Y"), as: :string, input_html: {class: "datepicker", id: "range_end"}  %>
-                  </div>
+        <div class="card-velo">
+          <% @bike.photos.each do |photo| %>
+            <%= cl_image_tag photo.key, crop: :fill %>
+        <% end %>
+        </div>
+        <div class="bike-infos d-flex">
+            <div class="col-md-7 ml-2">
+              <div class="row">
+                <div class="col-md-4 d-flex flex-column px-2 py-3">
+                  <p class="p-1"><i class="fas fa-restroom"></i> Type : <%= @bike.gender %></p>
+                  <p class="p-1"><i class="fas fa-bicycle"></i> Style : <%= @bike.style %></p>
                 </div>
-                  <%= f.submit "Réserver" , class:"btn btn-flat" %>
-              <% end %>
+                <div class="col-md-4 d-flex flex-column px-2 py-3">
+                  <p class="p-1"><i class="fas fa-palette"></i> Couleur : <%= @bike.color %></p>
+                  <p class="p-1"><i class="fas fa-cog"></i> Vitesses : <%= @bike.gear %></p>
+                </div>
+                <div class="col-md-4 px-2 py-3 d-flex align-items-center">
+                  <p class="p-1 d-flex align-items-center"><i class="fas fa-user-circle pr-2" id="loueur_icone"></i> Loueur : <%= @bike.user.first_name %> </p>
+                </div>
+              </div>
+              <div class="row">
+                <div class="description px-3">
+                  <p><%= @bike.description %></p>
+                </div>
+              </div>
             </div>
+            <div class="col-md-5">
+              <div class="row">
+                <div class="booking w-100">
+                  <strong><%= @bike.price %>€</strong> par jour
+                  <p>Ajouter vos dates</p>
+                  <%= simple_form_for([@bike, @booking]) do |f| %>
+                    <div class="row">
+                      <div class="col">
+                        <%= f.input :start_date, label: "Arrivée", placeholder: Time.zone.now.strftime("%b %d, %Y"), as: :string, input_html: {class: "datepicker", id: "range_start"}  %>
+                      </div>
+                      <div class="col">
+                        <%= f.input :end_date, label: "Départ", placeholder: Time.zone.now.strftime("%b %d, %Y"), as: :string, input_html: {class: "datepicker", id: "range_end"}  %>
+                      </div>
+                    </div>
+                      <%= f.submit "Réserver" , class:"btn btn-flat" %>
+                  <% end %>
+                </div>
+              </div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  <div class="container">
-    <div class="row justify-content-center">
-
-    <div class="reviews-total col-12 px-2 py-3">
+<div class="container mt-5">
+  <div class="row d-flex justify-content-center">
+    <div class="col-10">
       <h3>Evaluations</h3>
-<!--       <div class="p-1"><p><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i> 8 locations</p></div>
- -->      <div class="col-12">
+      <div class="reviews-total col-12 px-2 py-3 d-flex flex-column justify-content-center">
         <% @bike.reviews.each do |review| %>
           <div class="review-card">
             <div class="reviewss d-flex align-items-center w-100">
@@ -88,6 +89,8 @@
         <% end %>
       </div>
     </div>
+  </div>
+</div>
 
 <!--   <div class="row">
     <div class="reviews-total col-12 px-2 py-3">

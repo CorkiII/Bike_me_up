@@ -94,8 +94,11 @@
   padding: 20px;
   margin: 10px 0;
   border-radius: 4px;
-  color: gray;
 }
+
+.bike-infos p {
+    color: $gray;
+  }
 
 .card-booking {
   border-radius: 4px;
@@ -117,7 +120,7 @@
 
 .share a {
   text-decoration: none;
-  color: gray;
+  color: black;
 }
 
 .card-product {
