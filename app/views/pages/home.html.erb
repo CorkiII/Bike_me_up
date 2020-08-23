@@ -7,18 +7,17 @@
           <p>Louez un vélo à <span id="banner-typed-text"></span>.</p>
         </div>
         <div class="d-flex justify-content-center mt-3">
-          <%= link_to "Tous nos vélos", bikes_path, class:"btn btn-flat" %>
           <%= form_tag bikes_path, method: :get do %>
           <div class="form-inline ml-5">
             <div class="form-group">
               <%= text_field_tag :query,
                 params[:query],
                 class: "form",
-                placeholder: "Où êtes-vous?"
+                placeholder: "Où cherchez-vous?"
               %>
             </div>
             <div class="form-group ml-3">
-              <%= submit_tag "Pédaler", class: "btn btn-flat" %>
+              <%= submit_tag "Pédaler!", class: "btn btn-flat" %>
             </div>
           </div>
           <% end %>
