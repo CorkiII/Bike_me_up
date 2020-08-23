@@ -28,11 +28,11 @@
       </div>
       <div class="col-5">
         <div id="map"
-         style="width: 100%; height: 75vh; margin: 12px 0 6px 0; position: sticky; top: 13.6vh"
+         style="width: 100%; height: 75vh; margin: 12px 0 12px 0; position: sticky; top: 13.6vh"
          data-markers="<%= @markers.to_json %>"
          data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
         </div>
-        <div style="position: sticky; top: 90vh; margin: 6px 0 8px 0">
+        <div style="position: sticky; top: 90vh; margin: 12px 0 12px 0">
           <%= form_tag bikes_path, method: :get do %>
             <div class="form-inline ml-5 mt-2 mb-2">
               <div class="form-group">
